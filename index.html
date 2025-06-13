@@ -1,113 +1,176 @@
-
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Happy Birthday 🎉</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
-      color: white;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      text-align: center;
-    }
-
-    .cake {
-      position: relative;
-      width: 200px;
-      height: 200px;
-      margin-bottom: 30px;
-    }
-
-    .layer {
-      position: absolute;
-      width: 100%;
-      height: 60px;
-      background: #ff9aa2;
-      border-radius: 10px;
-    }
-
-    .layer2 {
-      top: 50px;
-      width: 160px;
-      left: 20px;
-      background: #ffb7b2;
-    }
-
-    .layer3 {
-      top: 100px;
-      width: 120px;
-      left: 40px;
-      background: #ffdac1;
-    }
-
-    .candle {
-      position: absolute;
-      top: -20px;
-      left: 90px;
-      width: 20px;
-      height: 40px;
-      background: #fff;
-      border-radius: 5px;
-    }
-
-    .flame {
-      position: absolute;
-      top: -15px;
-      left: 5px;
-      width: 10px;
-      height: 10px;
-      background: gold;
-      border-radius: 50%;
-      animation: flicker 0.4s infinite alternate;
-    }
-
-    @keyframes flicker {
-      0% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.2); opacity: 0.7; }
-      100% { transform: scale(1); opacity: 1; }
-    }
-
-    .message {
-      font-size: 1.2rem;
-      max-width: 90%;
-      margin-top: 20px;
-    }
-
-    .footer {
-      margin-top: 40px;
-      font-size: 0.9rem;
-      opacity: 0.8;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body, html {
+            height: 100%;
+            overflow: hidden;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        .page {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.8s ease;
+        }
+        .container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: row;
+            transition: transform 0.5s ease-in-out;
+        }
+        .cake {
+            position: relative;
+            width: 180px;
+            height: 200px;
+            background: linear-gradient(#002244, #004488);
+            border-radius: 0 0 25px 25px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+        }
+        .candle {
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 10px;
+            height: 40px;
+            background: #FFD700;
+            border-radius: 5px;
+        }
+        .flame {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            width: 15px;
+            height: 15px;
+            background: radial-gradient(ellipse at center, #ff0 0%, #f90 60%, transparent 100%);
+            border-radius: 50%;
+            transform: translateX(-50%) scale(1);
+            animation: flicker 1s infinite ease-in-out;
+        }
+        @keyframes flicker {
+            0%, 100% {
+                transform: translateX(-50%) scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: translateX(-50%) scale(1.2);
+                opacity: 0.8;
+            }
+        }
+        h1 {
+            color: #fff;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .page-text {
+            color: #fff;
+            padding: 0 20px;
+            text-align: center;
+            font-size: 1.2em;
+        }
+        body {
+            background: #000428;  /* fallback */
+            background: linear-gradient(to right, #004e92, #000428);
+        }
+        .dot-nav {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+        .dot {
+            width: 10px;
+            height: 10px;
+            background: #ccc;
+            border-radius: 50%;
+        }
+        .dot.active {
+            background: #fff;
+        }
+    </style>
 </head>
 <body>
-  <div class="cake">
-    <div class="layer layer"></div>
-    <div class="layer layer2"></div>
-    <div class="layer layer3"></div>
-    <div class="candle">
-      <div class="flame"></div>
+    <div id="slider" class="container">
+        <div class="page">
+            <div class="cake">
+                <div class="candle"></div>
+                <div class="flame"></div>
+            </div>
+            <h1>🎉 Happy Birthday 🎉</h1>
+        </div>
+        <div class="page">
+            <p class="page-text">Semoga langkah kamu ke depan selalu dibarengi hal-hal baik 💙</p>
+        </div>
+        <div class="page">
+            <p class="page-text">Makasih udah jadi kamu — dengan segala hal kecil yang bikin aku senyum diam-diam 😌</p>
+        </div>
+        <div class="page">
+            <p class="page-text">Kalau kamu lagi nyanyi Naff - Akhirnya ku Menemukanmu...<br> mungkin kamu bakal inget pernah ada seseorang yang inget kamu sesimpel itu.</p>
+        </div>
+        <div class="page">
+            <p class="page-text">Have a good life, Mr. Gemini. 🖤</p>
+        </div>
     </div>
-  </div>
+    <div class="dot-nav">
+        <div class="dot active"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+    <script>
+        let current = 0;
+        const slider = document.getElementById('slider');
+        const dots = document.querySelectorAll('.dot');
 
-  <h1>Selamat Ulang Tahun! 🎂</h1>
-  <p class="message">
-    Semoga setiap langkah kamu ke depan selalu dibarengi hal-hal baik.<br><br>
-    Makasih udah jadi kamu — dengan segala hal kecil yang bikin aku senyum diam-diam.<br><br>
-    Aku harap, apapun yang kamu cari, kamu temui.<br><br>
-    Kalau kamu lagi nyanyi Naff - Akhirnya Ku Menemukanmu...<br>
-    Mungkin kamu bakal inget pernah ada seseorang yang inget kamu sesimpel itu. 😌<br><br>
-    Have a good life, Mr. Gemini 🖤
-  </p>
-  <p class="footer">— dari seseorang yang pernah nyimpen earphone kamu 🎧</p>
+        function updateSlider(index) {
+            slider.style.transform = `translateX(-${index * 100}vw)`;
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+        }
+
+        window.addEventListener('touchstart', handleTouchStart, false);        
+        window.addEventListener('touchmove', handleTouchMove, false);
+
+        let xDown = null;
+
+        function handleTouchStart(evt) {
+            xDown = evt.touches[0].clientX;
+        }                                        
+
+        function handleTouchMove(evt) {
+            if (!xDown) return;
+
+            let xUp = evt.touches[0].clientX;
+            let xDiff = xDown - xUp;
+
+            if (xDiff > 30 && current < 4) {
+                current++;
+                updateSlider(current);
+            } else if (xDiff < -30 && current > 0) {
+                current--;
+                updateSlider(current);
+            }
+            xDown = null;
+        }
+    </script>
 </body>
 </html>
+

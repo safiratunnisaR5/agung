@@ -39,23 +39,9 @@
       border-radius: 10px;
     }
 
-    .tier-bottom {
-      bottom: 0;
-      width: 180px;
-      height: 60px;
-    }
-
-    .tier-middle {
-      bottom: 60px;
-      width: 130px;
-      height: 50px;
-    }
-
-    .tier-top {
-      bottom: 110px;
-      width: 80px;
-      height: 40px;
-    }
+    .tier-bottom { bottom: 0; width: 180px; height: 60px; }
+    .tier-middle { bottom: 60px; width: 130px; height: 50px; }
+    .tier-top { bottom: 110px; width: 80px; height: 40px; }
 
     .candle {
       width: 10px;
@@ -162,17 +148,16 @@
         </div>
       </div>
     </div>
-
     <button class="button" onclick="blowCandle()">Tiup Lilin 💨</button>
   </div>
 
-  <!-- Disembunyikan sebelum tiup lilin -->
+  <!-- Bagian yang disembunyikan sampai lilin ditiup -->
   <div id="content" class="hidden-section">
     <div class="photo-section">
       <img src="https://raw.githubusercontent.com/safiratunnisaR5/agung/main/agung.jpg" alt="Foto Agung" class="birthday-photo">
     </div>
 
-    <div class="doa" id="doa">
+    <div class="doa">
       Semoga langkah kamu ke depan selalu dibarengi hal-hal baik 💙<br><br>
       Kalau kamu lagi nyanyi Naff - Akhirnya Ku Menemukanmu, mungkin kamu bakal inget pernah ada seseorang yang inget kamu sesimpel itu.<br><br>
       Have a good life, Mr. Gemini.
@@ -184,13 +169,15 @@
   <script>
     function blowCandle() {
       document.getElementById("flame").classList.add("hidden");
-      document.getElementById("content").style.display = "block";
-      document.getElementById("content").scrollIntoView({ behavior: 'smooth' });
+      const content = document.getElementById("content");
+      content.style.display = "block";
+      content.scrollIntoView({ behavior: 'smooth' });
     }
   </script>
 
 </body>
 </html>
+
 
 
 

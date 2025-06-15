@@ -143,6 +143,10 @@
       color: #f0f8ff;
       text-align: center;
     }
+
+    .hidden-section {
+      display: none;
+    }
   </style>
 </head>
 <body>
@@ -162,28 +166,32 @@
     <button class="button" onclick="blowCandle()">Tiup Lilin 💨</button>
   </div>
 
-  <div class="photo-section">
-    <img src="https://raw.githubusercontent.com/safiratunnisaR5/agung/main/agung.jpg" alt="Foto Agung" class="birthday-photo">
-  </div>
+  <!-- Disembunyikan sebelum tiup lilin -->
+  <div id="content" class="hidden-section">
+    <div class="photo-section">
+      <img src="https://raw.githubusercontent.com/safiratunnisaR5/agung/main/agung.jpg" alt="Foto Agung" class="birthday-photo">
+    </div>
 
-  <div class="doa" id="doa" style="display:none;">
-    Semoga langkah kamu ke depan selalu dibarengi hal-hal baik 💙<br><br>
-    Kalau kamu lagi nyanyi Naff - Akhirnya Ku Menemukanmu, mungkin kamu bakal inget pernah ada seseorang yang inget kamu sesimpel itu.<br><br>
-    Have a good life, Mr. Gemini.
-  </div>
+    <div class="doa" id="doa">
+      Semoga langkah kamu ke depan selalu dibarengi hal-hal baik 💙<br><br>
+      Kalau kamu lagi nyanyi Naff - Akhirnya Ku Menemukanmu, mungkin kamu bakal inget pernah ada seseorang yang inget kamu sesimpel itu.<br><br>
+      Have a good life, Mr. Gemini.
+    </div>
 
-  <div class="by">— Dari Safira berumur legal 💌</div>
+    <div class="by">— Dari Safira berumur legal 💌</div>
+  </div>
 
   <script>
     function blowCandle() {
       document.getElementById("flame").classList.add("hidden");
-      document.getElementById("doa").style.display = "block";
-      document.getElementById("doa").scrollIntoView({ behavior: 'smooth' });
+      document.getElementById("content").style.display = "block";
+      document.getElementById("content").scrollIntoView({ behavior: 'smooth' });
     }
   </script>
 
 </body>
 </html>
+
 
 
 

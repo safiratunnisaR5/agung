@@ -7,35 +7,36 @@
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to bottom, #001f3f, #0074D9);
+      background: linear-gradient(to bottom, #00008B, #1E90FF);
       color: white;
+      text-align: center;
       margin: 0;
       padding: 0;
     }
 
     .section {
-      padding: 100px 20px 50px 20px;
-      text-align: center;
+      padding: 60px 20px;
     }
 
     h1 {
-      font-size: 2.8em;
-      margin-bottom: 10px;
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      word-break: break-word;
     }
 
     .cake {
       position: relative;
       width: 180px;
       height: 160px;
-      margin: 50px auto 20px auto;
+      margin: 30px auto;
     }
 
     .tier {
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
-      background: #3399ff;
-      border: 5px solid #87CEFA;
+      background: #ff4d4d;
+      border: 5px solid gold;
       border-radius: 10px;
     }
 
@@ -77,26 +78,10 @@
       display: none;
     }
 
-    .photo-section {
-      text-align: center;
-      margin-top: 60px;
-    }
-
-    .birthday-photo {
-      max-width: 85%;
-      border-radius: 20px;
-      box-shadow: 0 0 25px rgba(255,255,255,0.3);
-      transition: transform 0.3s ease;
-    }
-
-    .birthday-photo:hover {
-      transform: scale(1.03);
-    }
-
     .button {
       padding: 15px 30px;
-      background-color: #00BFFF;
-      color: #001f3f;
+      background-color: gold;
+      color: navy;
       font-weight: bold;
       font-size: 1.2em;
       border: none;
@@ -110,28 +95,43 @@
       transform: scale(1.05);
     }
 
+    .doa, .foto, .by {
+      display: none;
+    }
+
     .doa {
-      margin-top: 100px;
+      margin-top: 40px;
       font-size: 1.2em;
       max-width: 700px;
       margin-left: auto;
       margin-right: auto;
-      line-height: 1.8;
+      line-height: 1.7;
       background: rgba(255, 255, 255, 0.1);
-      padding: 25px;
+      padding: 20px;
       border-radius: 15px;
       box-shadow: 0 0 20px rgba(0,0,0,0.2);
     }
 
-    .by {
-      margin-top: 40px;
-      font-size: 1.1em;
-      color: #f0f8ff;
-      text-align: center;
+    .foto img {
+      max-width: 90%;
+      height: auto;
+      border-radius: 15px;
+      margin-top: 30px;
+      box-shadow: 0 0 15px rgba(255,255,255,0.3);
     }
 
-    .hidden-section {
-      display: none;
+    .by {
+      margin-top: 30px;
+      font-size: 1.1em;
+      color: #ddd;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 1.8em; margin-bottom: 20px; }
+      .cake { transform: scale(0.85); margin-bottom: 20px; }
+      .button { font-size: 1em; padding: 12px 25px; }
+      .doa { font-size: 1em; padding: 15px; }
+      .by { font-size: 0.95em; }
     }
   </style>
 </head>
@@ -139,6 +139,7 @@
 
   <div class="section">
     <h1>🎉 Happy Birthday Agung!! 🎂</h1>
+
     <div class="cake">
       <div class="tier tier-bottom"></div>
       <div class="tier tier-middle"></div>
@@ -148,35 +149,35 @@
         </div>
       </div>
     </div>
-    <button class="button" onclick="blowCandle()">Tiup Lilin 💨</button>
-  </div>
 
-  <!-- Bagian yang disembunyikan sampai lilin ditiup -->
-  <div id="content" class="hidden-section">
-    <div class="photo-section">
-      <img src="https://raw.githubusercontent.com/safiratunnisaR5/agung/main/agung.jpg" alt="Foto Agung" class="birthday-photo">
+    <button class="button" onclick="blowCandle()">Tiup Lilin & Lihat Pesan 🎈</button>
+
+    <div class="foto" id="foto">
+      <img src="https://raw.githubusercontent.com/safiratunnisaR5/agung/main/agung.jpg" alt="Foto Agung" />
     </div>
 
-    <div class="doa">
-      Semoga langkah kamu ke depan selalu dibarengi hal-hal baik 💙<br><br>
-      Kalau kamu lagi nyanyi Naff - Akhirnya Ku Menemukanmu, mungkin kamu bakal inget pernah ada seseorang yang inget kamu sesimpel itu.<br><br>
+    <div class="doa" id="doa">
+      Happy Birthday 💙<br><br>
+      Semoga langkah kamu ke depan selalu dibarengi hal-hal baik.<br><br>
+      Kalau kamu lagi nyanyi <i>Naff - Akhirnya Ku Menemukanmu</i>, mungkin kamu bakal inget... pernah ada seseorang yang inget kamu sesimpel itu.<br><br>
       Have a good life, Mr. Gemini.
     </div>
 
-    <div class="by">— Dari Safira berumur legal 💌</div>
+    <div class="by" id="by">— dari Safira berumur legal 💌</div>
   </div>
 
   <script>
     function blowCandle() {
       document.getElementById("flame").classList.add("hidden");
-      const content = document.getElementById("content");
-      content.style.display = "block";
-      content.scrollIntoView({ behavior: 'smooth' });
+      document.getElementById("doa").style.display = "block";
+      document.getElementById("foto").style.display = "block";
+      document.getElementById("by").style.display = "block";
     }
   </script>
 
 </body>
 </html>
+
 
 
 

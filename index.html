@@ -3,85 +3,83 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Selamat Ulang Tahun!</title>
+  <title>Happy Birthday Agung!!</title>
   <style>
-    html, body {
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #001f3f, #0074D9);
+      color: white;
       margin: 0;
       padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to bottom, #0A0F2C, #1B1F3B);
-      color: #F0F4FF;
-      scroll-behavior: smooth;
     }
 
     .section {
-      padding: 80px 20px;
+      padding: 100px 20px 50px 20px;
       text-align: center;
     }
 
     h1 {
-      font-size: 2.5em;
+      font-size: 2.8em;
       margin-bottom: 10px;
-      color: #A9C9FF;
     }
 
     .cake {
       position: relative;
-      width: 160px;
-      height: 150px;
-      margin: 40px auto;
+      width: 180px;
+      height: 160px;
+      margin: 50px auto 20px auto;
     }
 
     .tier {
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
-      background: #1F2A44;
-      border: 5px solid #4F628E;
+      background: #3399ff;
+      border: 5px solid #87CEFA;
       border-radius: 10px;
     }
 
     .tier-bottom {
       bottom: 0;
-      width: 160px;
-      height: 55px;
+      width: 180px;
+      height: 60px;
     }
 
     .tier-middle {
-      bottom: 55px;
-      width: 120px;
-      height: 45px;
+      bottom: 60px;
+      width: 130px;
+      height: 50px;
     }
 
     .tier-top {
-      bottom: 100px;
-      width: 70px;
-      height: 35px;
+      bottom: 110px;
+      width: 80px;
+      height: 40px;
     }
 
     .candle {
-      width: 8px;
-      height: 30px;
-      background: #ffffff;
+      width: 10px;
+      height: 35px;
+      background: white;
       margin: 0 auto;
       position: absolute;
-      top: -30px;
+      top: -35px;
       left: 50%;
       transform: translateX(-50%);
       border-radius: 2px;
     }
 
     .flame {
-      width: 14px;
-      height: 14px;
-      background: gold;
+      width: 15px;
+      height: 15px;
+      background: yellow;
       border-radius: 50%;
       position: absolute;
-      top: -18px;
+      top: -20px;
       left: 50%;
       transform: translateX(-50%);
       animation: flicker 0.2s infinite alternate;
-      box-shadow: 0 0 10px gold;
+      box-shadow: 0 0 10px yellow;
     }
 
     @keyframes flicker {
@@ -93,29 +91,57 @@
       display: none;
     }
 
-    .doa {
+    .photo-section {
+      text-align: center;
       margin-top: 60px;
+    }
+
+    .birthday-photo {
+      max-width: 85%;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(255,255,255,0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .birthday-photo:hover {
+      transform: scale(1.03);
+    }
+
+    .button {
+      padding: 15px 30px;
+      background-color: #00BFFF;
+      color: #001f3f;
+      font-weight: bold;
       font-size: 1.2em;
-      max-width: 90%;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: transform 0.2s ease-in-out;
+      margin-top: 30px;
+    }
+
+    .button:hover {
+      transform: scale(1.05);
+    }
+
+    .doa {
+      margin-top: 100px;
+      font-size: 1.2em;
+      max-width: 700px;
       margin-left: auto;
       margin-right: auto;
-      line-height: 1.7;
-      background: rgba(255, 255, 255, 0.05);
-      padding: 20px;
+      line-height: 1.8;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 25px;
       border-radius: 15px;
-      box-shadow: 0 0 15px rgba(255,255,255,0.08);
-      color: #C7D0FF;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
     }
 
     .by {
       margin-top: 40px;
-      font-size: 1em;
-      color: #99AABB;
-    }
-
-    @media (min-width: 600px) {
-      h1 { font-size: 3em; }
-      .doa { font-size: 1.3em; max-width: 700px; }
+      font-size: 1.1em;
+      color: #f0f8ff;
+      text-align: center;
     }
   </style>
 </head>
@@ -123,8 +149,6 @@
 
   <div class="section">
     <h1>🎉 Happy Birthday Agung!! 🎂</h1>
-    <p>Sudah siap tiup lilin sambil make a wish diam-diam? 😌</p>
-
     <div class="cake">
       <div class="tier tier-bottom"></div>
       <div class="tier tier-middle"></div>
@@ -135,31 +159,32 @@
       </div>
     </div>
 
-    <div class="doa" id="doa">
-      Happy Birthday 🎈<br><br>
-      Semoga langkah kamu ke depan selalu dibarengi hal-hal baik 💙<br><br>
-      Kalau kamu lagi nyanyi Naff - <i>Akhirnya Ku Menemukanmu</i>, mungkin kamu bakal inget pernah ada seseorang yang inget kamu sesimpel itu.<br><br>
-      Have a good life, Mr. Gemini 🌌
-    </div>
-
-    <div class="by">(dari Safira berumur legal) 💌</div>
+    <button class="button" onclick="blowCandle()">Tiup Lilin 💨</button>
   </div>
 
-  <script>
-    const flame = document.getElementById("flame");
-    const doa = document.getElementById("doa");
+  <div class="photo-section">
+    <img src="https://raw.githubusercontent.com/safiratunnisaR5/agung/main/agung.jpg" alt="Foto Agung" class="birthday-photo">
+  </div>
 
-    window.addEventListener("scroll", () => {
-      const doaTop = doa.getBoundingClientRect().top;
-      const windowHeight = window.innerHeight;
-      if (doaTop < windowHeight * 0.8) {
-        flame.classList.add("hidden");
-      }
-    });
+  <div class="doa" id="doa" style="display:none;">
+    Semoga langkah kamu ke depan selalu dibarengi hal-hal baik 💙<br><br>
+    Kalau kamu lagi nyanyi Naff - Akhirnya Ku Menemukanmu, mungkin kamu bakal inget pernah ada seseorang yang inget kamu sesimpel itu.<br><br>
+    Have a good life, Mr. Gemini.
+  </div>
+
+  <div class="by">— Dari Safira berumur legal 💌</div>
+
+  <script>
+    function blowCandle() {
+      document.getElementById("flame").classList.add("hidden");
+      document.getElementById("doa").style.display = "block";
+      document.getElementById("doa").scrollIntoView({ behavior: 'smooth' });
+    }
   </script>
 
 </body>
 </html>
+
 
 
 
